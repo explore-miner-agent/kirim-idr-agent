@@ -38,9 +38,9 @@ redeemable 1:1 to rupiah in Indonesian bank accounts.
 | ERC-8004 Identity Registry (Celo) | `0x8004A169FB4a3325136EB29fA0ceB6D2e539a432` |
 | Registration file | [`agent.json`](agent.json) |
 | Attribution code | `celo_4ebf8719a4f3` |
+| ERC-8004 agent ID | **10133** ([registration tx](https://celoscan.io/tx/0x88fe91c7b9c706d84a52546d0805af359e7fadbe3c4493bb73434552a911ec9d)) |
 
-The ERC-8004 agent ID and registration tx are written to
-[`docs/erc8004-registration.json`](docs/) once mined.
+Registration details: [`docs/erc8004-registration.json`](docs/erc8004-registration.json).
 
 ## Run it
 

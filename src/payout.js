@@ -55,7 +55,12 @@ export async function pay({ recipient, idr, memo = '', dryRun = false }) {
   // Convert only if the float of IDRX is short.
   if (idrxBal < buyAmount) {
     const need = buyAmount - idrxBal
-    const q = await textile.requestFirm(account, { sellToken: TOKENS.USDT.address, buyToken: TOKENS.IDRX.address, buyAmount: need })
+    let q
+    for (let i = 0; i < 3; i++) {
+      q = await textile.requestFirm(account, { sellToken: TOKENS.USDT.address, buyToken: TOKENS.IDRX.address, buyAmount: need })
+      if (!q.noQuote || q.noQuote.reason !== 'no_valid_quote') break
+      await new Promise((r) => setTimeout(r, 1500))
+    }
     if (q.noQuote) throw new Error(`no quote from Textile: ${JSON.stringify(q.noQuote)}`)
     const takerPays = BigInt(q.quote.takerPays)
     const maxPays = (previewPays * BigInt(10_000 + LIMITS.maxSlippageBps)) / 10_000n

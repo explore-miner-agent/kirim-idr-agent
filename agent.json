@@ -1,0 +1,14 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "Kirim — rupiah payout agent",
+  "description": "Kirim pays Indonesian freelancers and small suppliers the exact rupiah amount they invoiced, in IDRX on Celo. It holds a client's USDT, buys IDRX on Textile FX through request-for-quote, pays the recipient and keeps a receipt. Built by SerIgala for Celo 'Agents Open for Business'.",
+  "image": "https://raw.githubusercontent.com/explore-miner-agent/kirim-idr-agent/main/docs/kirim.svg",
+  "services": [
+    { "name": "web", "endpoint": "https://github.com/explore-miner-agent/kirim-idr-agent" },
+    { "name": "wallet", "endpoint": "eip155:42220:0xb27acB23a989C62560796BDaA9e63aAA0F7894E2" }
+  ],
+  "x402Support": false,
+  "active": true,
+  "supportedTrust": ["reputation"],
+  "registrations": []
+}

@@ -1,0 +1,22 @@
+{
+  "name": "kirim-idr-agent",
+  "version": "0.1.0",
+  "description": "Kirim: an agent that pays Indonesian freelancers and small suppliers in rupiah (IDRX) on Celo, funded in USDT and converted on Textile FX.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "status": "node src/cli.js status",
+    "quote": "node src/cli.js quote",
+    "pay": "node src/cli.js pay",
+    "register": "node scripts/register-8004.js",
+    "serve": "node src/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@celo/attribution-tags": "^0.5.0",
+    "viem": "^2.58.6"
+  }
+}
